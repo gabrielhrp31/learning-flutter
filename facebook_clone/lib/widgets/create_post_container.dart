@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:facebook_clone/config/palette.dart';
 import 'package:facebook_clone/models/models.dart';
 import 'package:facebook_clone/widgets/icon_text_button.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,6 @@ class CreatePostContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100.0,
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 0),
       color: Colors.white,
       child: Column(
@@ -28,7 +28,15 @@ class CreatePostContainer extends StatelessWidget {
               ),
               Expanded(
                 child: TextField(
-                  decoration: InputDecoration.collapsed(
+                  decoration: InputDecoration(
+                    contentPadding:const EdgeInsets.symmetric(vertical: 2.5, horizontal: 5),
+                    border:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    focusedBorder:  OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(100),
+                      borderSide: const BorderSide(color:Palette.facebookBlue, width: 2.0)
+                    ),
                     hintText: "What's on your mind?",
                   ),
                 ),
@@ -72,7 +80,7 @@ class CreatePostContainer extends StatelessWidget {
                     onPressed: (){
 
                     },
-                    iconColor: Colors.red
+                    iconColor: Colors.blue
                 ),
               ],
             ),
